@@ -51,12 +51,16 @@ function nscom_admin_options()
 
 function nscom_save_options()
 {
+    $success = false;
+
     if (isset($_POST['layout'])) {
         update_option('nscom_layout', $_POST['layout']);
+        $success = true;
     }
 
     if (isset($_POST['size'])) {
         update_option('nscom_size', $_POST['size']);
+        $success = true;
     }
 
     $layout = stripslashes(get_option('nscom_layout'));
